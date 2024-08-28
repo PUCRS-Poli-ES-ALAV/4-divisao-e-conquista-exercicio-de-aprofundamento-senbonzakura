@@ -48,7 +48,7 @@ public class App
     public static void execMerge(List<Long> list) {
         long it = System.nanoTime();
         MergeSortF alg = new MergeSortF();
- *        alg.sort(list, 0, list.size());
+        alg.sort(list, 0, list.size());
         System.out.printf("Algoritmo: mergeSortF, Tempo de execução: %f, Iterações: %d\n", (System.nanoTime() - it) / 1e6, alg.numIt());
     }
 
