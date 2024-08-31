@@ -12,7 +12,7 @@ public class App
 {
     public static void main( String[] args )
     {
-        final int tam = 1048576 / 2;
+        final int tam = 1024 / 2;
         System.out.println( "Hello World!" );
         List<Long> list = new ArrayList<>();
         for (long i : geraVetor(tam,tam)) {
@@ -22,6 +22,14 @@ public class App
         execMaxNoRec(geraVetor(tam, tam));
         execMaxRec(geraVetor(tam, tam));
         execBinMultiply(2, 6, 10);
+        execMultiplyR("0111", "0111");
+    }
+
+    public static void execMultiplyR(String a, String b) {
+        long it = System.nanoTime();
+        BinMultiplyString alg = new BinMultiplyString();
+        System.out.println(alg.multiply(a, b));
+        System.out.printf("Algoritmo: binMultiplyStr, Tempo de execução: %f, Iterações: %d\n", (System.nanoTime() - it) / 1e6, alg.numIt());
     }
 
     public static void execBinMultiply(long a, long b, long bits) {
